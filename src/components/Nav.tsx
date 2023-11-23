@@ -1,15 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import logo from '../content/images/static/addis_logo.png';
-import denmark from '../content/images/static/flags/denmark.png';
-import sweden from '../content/images/static/flags/sweden.png';
-import norway from '../content/images/static/flags/norway.png';
-import ukgb from '../content/images/static/flags/ukgb.png';
 
 const Nav = () => {
   return (
     <>
-    <div className='container-fluid bg-theme'>
+    <div className='container-fluid'>
     <div className='container'>
         <div className='flex justify-between py-3 items-center'>
             <Image
@@ -41,7 +37,7 @@ const Nav = () => {
                     className='cursor-pointer'
                 />
             </div> */}
-            <a href='#' className='text-decoration-none text-white'>Sv<i className="bi bi-caret-down-fill ms-1"></i> </a>
+            <a href='#' className='text-decoration-none text-black'>Sv<i className="bi bi-caret-down-fill ms-1"></i> </a>
         </div>
     </div>
     </div>

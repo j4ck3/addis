@@ -29,7 +29,7 @@ const PaginationSelect: React.FC<PaginationSelectProps> = ({
         name="pagination-select"
         value={currentPage}
         onChange={handlePageChange}
-        className="block px-2 py-2 border-2 border-green-500 rounded-md rounded-md focus:outline-none focus:border-blue-300 focus:shadow-outline-blue bg-white"
+        className="block px-2 py-2 border-2 border-green-500 rounded-md focus:outline-none focus:border-blue-300 focus:shadow-outline-blue bg-white"
       >
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
           <option key={page} value={page}>

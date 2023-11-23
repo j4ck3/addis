@@ -1,14 +1,40 @@
 "use client"
 import React from 'react';
-import Nav from '../sections/Nav';
-import Dropdown from '../components/Dropdown';
-import PaginationSelect from '../components/PaginationDropdown';
-import InterviewTable from '../sections/InterviewTable';
+import Nav from '../../components/Nav';
+import Dropdown from '../../components/Dropdown';
+import PaginationSelect from '../../components/PaginationDropdown';
+import InterviewTable from '../../components/InterviewTable';
+import { Client } from '@/interfaces/Client';
+
 
 export default function Interviews() {
-
+  
   const handlePageChange = (selectedPage: number) => {
   };
+
+  const testData:Client[] = [
+    {
+      dateCreated: '2023-01-01',
+      id: 'ABC123',
+      interviewer: 'John',
+      formType: 'Type A',
+      status: 'Pending',
+    },
+    {
+      dateCreated: '2023-02-15',
+      id: 'DEF456',
+      interviewer: 'John',
+      formType: 'Type B',
+      status: 'Approved',
+    },
+    {
+      dateCreated: '2023-03-30',
+      id: 'GHI789',
+      interviewer: 'John',
+      formType: 'Type C',
+      status: 'Rejected',
+    },
+  ];
   return (
     <>
         <Nav />
@@ -17,7 +43,7 @@ export default function Interviews() {
           <div className='m-2 border p-2 rounded'>
             <div className="flex justify-between">
               <h2 className="text-black">Intervjuver</h2>
-              <button className="btn-theme">Skapa en ny Intervjuv</button>
+              <a href='/interviews/create' className="btn-theme">Skapa en ny Intervjuv</a>
             </div>
             <div className="flex justify-between">
               <Dropdown options={["ADDIS", "ADDIS Ung", "ADDIS Substansfokus"]} label={'Formulärtyp'} />
@@ -26,7 +52,7 @@ export default function Interviews() {
                 type='text'
                 placeholder='Sök'
                 className='outline-0 border-2 border-green-500 rounded-md p-2' />
-                <p className="absolute right-2 top-3"><i className="bi bi-search"></i></p>
+                <p className="absolute right-3 top-[7px]"><i className="bi bi-search fs-5"></i></p>
               </div>
               <PaginationSelect
                 totalItems={20}
@@ -34,8 +60,8 @@ export default function Interviews() {
                 onPageChange={handlePageChange}
               />
             </div>
+          <InterviewTable interviews={testData} />
           </div>
-          <InterviewTable />
         </div>
     </>
   );
