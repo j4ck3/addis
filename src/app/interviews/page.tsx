@@ -5,6 +5,7 @@ import Dropdown from '../../components/Dropdown';
 import PaginationSelect from '../../components/PaginationDropdown';
 import InterviewTable from '../../components/InterviewTable';
 import { Client } from '@/interfaces/Client';
+import Link from 'next/link';
 
 
 export default function Interviews() {
@@ -38,12 +39,10 @@ export default function Interviews() {
   return (
     <>
         <Nav />
-
-        <div className='container'>
-          <div className='m-2 border p-2 rounded'>
+        <div className='container mt-5'>
             <div className="flex justify-between">
               <h2 className="text-black">Intervjuver</h2>
-              <a href='/interviews/create' className="btn-theme">Skapa en ny Intervjuv</a>
+              <Link href='/interviews/create' className="btn-theme">Skapa en ny Intervjuv</Link>
             </div>
             <div className="flex justify-between">
               <Dropdown options={["ADDIS", "ADDIS Ung", "ADDIS Substansfokus"]} label={'Formulärtyp'} />
@@ -62,7 +61,6 @@ export default function Interviews() {
             </div>
           <InterviewTable interviews={testData} />
           </div>
-        </div>
     </>
   );
 }

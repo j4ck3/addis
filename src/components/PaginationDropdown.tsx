@@ -23,7 +23,7 @@ const PaginationSelect: React.FC<PaginationSelectProps> = ({
   };
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="inline-flex items-center space-x-2">
       <select
         id="pagination-select"
         name="pagination-select"
