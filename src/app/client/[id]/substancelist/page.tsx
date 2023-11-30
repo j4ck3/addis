@@ -6,7 +6,6 @@ import React from "react";
 const SubstanceList: NextPage = () => {
   return (
     <>
-      <Nav />
       <div className="container shadow-md rounded p-6 my-7 mb-4">
         <ClientInfoHead />
         <p>1 klick (personen har använt substansen)</p>

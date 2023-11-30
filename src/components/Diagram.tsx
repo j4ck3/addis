@@ -32,13 +32,13 @@ export default function Diagram() {
           <p className="text-end p-0 m-0 pe-2 w-12">A1</p>
           <p className="text-end p-0 m-0 pe-2 w-12">A</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">L</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">L</p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12">L</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A1</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
         </div>
       </div>
       <div className="grid grid-cols-2">
@@ -46,9 +46,9 @@ export default function Diagram() {
         <div className="grid grid-cols-12 mt-2">
           <p className="text-end p-0 m-0 pe-2 w-12">34.</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
+          <p className="text-end p-0 m-0 pe-2 w-12">L</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
@@ -67,15 +67,15 @@ export default function Diagram() {
         <div className="grid grid-cols-12 mt-2">
           <p className="text-end p-0 m-0 pe-2 w-12">34.</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A222ss1</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
+          <p className="text-end p-0 m-0 pe-2 w-12">AA2</p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12">L</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">L</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">L</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A1</p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12">A</p>
         </div>
       </div>
@@ -84,8 +84,8 @@ export default function Diagram() {
         <div className="grid grid-cols-12 mt-2">
           <p className="text-end p-0 m-0 pe-2 w-12">34.</p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
-          <p className="text-end p-0 m-0 pe-2 w-12">A</p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
+          <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>
           <p className="text-end p-0 m-0 pe-2 w-12"></p>

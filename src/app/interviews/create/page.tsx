@@ -1,10 +1,8 @@
 import React from 'react'
-import Nav from '../../../components/Nav'
 
 export default function Create() {
   return (
     <>
-    <Nav />
     <div className="flex justify-center items-center h-screen">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-[400px] w-full">
         <div className="mb-4 relative">

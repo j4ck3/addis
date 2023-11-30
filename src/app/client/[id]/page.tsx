@@ -1,4 +1,3 @@
-import Nav from "@/components/Nav";
 import { Client } from "@/interfaces/Client";
 import { NextPage } from "next";
 import Link from "next/link";
@@ -15,7 +14,6 @@ var item: Client = {
 const InterviewDetails: NextPage = () => {
   return (
     <>
-      <Nav />
       <div className="container shadow-md rounded p-4 my-7 mb-4">
         <div className="flex justify-between">
           <div>

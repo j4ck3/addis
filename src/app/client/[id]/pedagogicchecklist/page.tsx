@@ -1,13 +1,10 @@
 import ClientInfoHead from '@/components/ClientInfoHead'
-import Diagram from '@/components/Diagram'
-import Nav from '@/components/Nav'
 import { NextPage } from 'next'
 import React from 'react'
 
 const PedagogicChecklist:NextPage = () => {
   return (
     <>
-        <Nav />
         <div className="container shadow-md rounded p-6 my-7 mb-4">
             <ClientInfoHead />
             <h3 className=''>1. Försummat plikter</h3>

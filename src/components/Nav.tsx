@@ -1,40 +1,22 @@
+"use server";
 import React from "react";
 import Image from "next/image";
 import logo from "../content/images/static/addis_logo.png";
 import Link from "next/link";
 
-const Nav = () => {
+import { auth } from "@/auth";
+
+export default async function Nav() {
+  const session = await auth();
+
   return (
     <>
       <div className="container-fluid">
         <div className="container">
-          <div className="flex justify-between py-3 items-center">
-            <Image src={logo} alt="addis" width={180} height={50} />
-            {/* <div className='flex items-center space-x-2'>
-                <Image
-                    src={sweden}
-                    alt='Sweden'
-                    width={30}
-                    className='cursor-pointer'
-                />
-                <Image
-                    src={norway}
-                    alt='Norway'
-                    className='cursor-pointer'
-                />
-                <Image
-                    src={ukgb}
-                    alt='United Kingdom (Great Britain)'
-                    className='cursor-pointer'
-                />
-                <Image
-                    src={denmark}
-                    alt='Denmark'
-                    className='cursor-pointer'
-                />
-            </div> */}
-            <Link href="#" className="text-decoration-none text-black">
-              Sv<i className="bi bi-caret-down-fill ms-1"></i>{" "}
+          <div className="flex justify-between items-center">
+            <Image className="my-2" src={logo} alt="addis" width={100} height={50} />
+            <Link href="#" className="text-decoration-none text-black text-sm">
+              Sv<i className="bi bi-caret-down-fill ms-1"></i>
             </Link>
           </div>
         </div>
@@ -42,8 +24,8 @@ const Nav = () => {
 
       <div className="container-fluid bg-theme">
         <div className="container">
-          <div className="flex py-3 justify-between">
-            <div className="space-x-10">
+          <div className="flex py-4 justify-between">
+            <div className="space-x-14 text-sm">
               <div className="group inline-block relative">
                 <Link
                   className="group text-white text-decoration-none hover:text-gray-300 py-4"
@@ -143,18 +125,21 @@ const Nav = () => {
                     Item 2
                   </Link>
                 </div>
-              </div>{" "}
+              </div>
             </div>
             <div>
-              <Link className="text-white text-decoration-none" href="/signup">
-                <i className="bi bi-box-arrow-in-right me-1"></i>Logga In
-              </Link>
+            {session === null ? (
+                <a className="text-green-700 text-sm bg-white px-3 py-2 rounded" href="/api/auth/signin">Logga in</a>
+              ) : (
+                <>
+                  {/* <span className="text-white text-sm me-2">{session?.user?.email}</span> */}
+                  <a className="text-green-700 text-sm bg-white px-3 py-2 rounded" href="/api/auth/signout"> Logga ut</a>
+                </>
+              )}
             </div>
           </div>
         </div>
       </div>
     </>
   );
-};
-
-export default Nav;
+}

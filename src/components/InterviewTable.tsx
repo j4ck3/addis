@@ -10,8 +10,8 @@ interface Props {
 const InterviewTable: NextPage<Props> = ({ interviews }) => {
   return (
     <>
-      <div className="rounded overflow-hidden">
-        <table className="content-table table-auto table-sortable w-full mt-16 border border-collapse">
+      <div className="">
+        <table className="content-table table-auto table-sortable w-full mt-3 rounded-xl overflow-hidden">
           <thead>
             <tr className="bg-green-500 text-white">
               <th className="py-2 px-4">Datum</th>

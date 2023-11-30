@@ -1,13 +1,4 @@
-import Nav from '../components/Nav'
-
+"use client";
 export default function Home() {
-  return (
-    <>
-    <Nav />
-
-    
-      <main>
-      </main>
-    </>
-  )
-}
+  return <>index</>;
+}  
