@@ -15,8 +15,8 @@ export default async function Nav() {
         <div className="container">
           <div className="flex justify-between items-center">
             <Image className="my-2" src={logo} alt="addis" width={100} height={50} />
-            <Link href="#" className="text-decoration-none text-black text-sm">
-              Sv<i className="bi bi-caret-down-fill ms-1"></i>
+            <Link href="#" className="text-decoration-none text-black text-sm p-2 border rounded">
+              Sv
             </Link>
           </div>
         </div>
@@ -25,7 +25,7 @@ export default async function Nav() {
       <div className="container-fluid bg-theme">
         <div className="container">
           <div className="flex py-4 justify-between">
-            <div className="space-x-14 text-sm">
+            <div className="space-x-10 text-sm">
               <div className="group inline-block relative">
                 <Link
                   className="group text-white text-decoration-none hover:text-gray-300 py-4"
@@ -40,9 +40,9 @@ export default async function Nav() {
                   href="/interviews"
                 >
                   Administrera
-                  <i className="bi bi-caret-down-fill ms-1"></i>
+                 
                 </Link>
-                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md transition-transform duration-300 ease-in-out transform translate-y-[-10px]">
+                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md ">
                   <Link
                     href="#"
                     className="block px-4 py-2 text-gray-800 text-decoration-none"
@@ -63,9 +63,9 @@ export default async function Nav() {
                   href="/interviews"
                 >
                   Manualer
-                  <i className="bi bi-caret-down-fill ms-1"></i>
+                 
                 </Link>
-                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md transition-transform duration-300 ease-in-out transform translate-y-[-10px]">
+                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md ">
                   <Link
                     href="#"
                     className="block px-4 py-2 text-gray-800 text-decoration-none"
@@ -86,9 +86,9 @@ export default async function Nav() {
                   href="/interviews"
                 >
                   Frågeformulär
-                  <i className="bi bi-caret-down-fill ms-1"></i>
+                 
                 </Link>
-                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md transition-transform duration-300 ease-in-out transform translate-y-[-10px]">
+                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md ">
                   <Link
                     href="#"
                     className="block px-4 py-2 text-gray-800 text-decoration-none"
@@ -109,9 +109,9 @@ export default async function Nav() {
                   href="/interviews"
                 >
                   Logotyper
-                  <i className="bi bi-caret-down-fill ms-1"></i>
+                 
                 </Link>
-                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md transition-transform duration-300 ease-in-out transform translate-y-[-10px]">
+                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md ">
                   <Link
                     href="#"
                     className="block px-4 py-2 text-gray-800 text-decoration-none"

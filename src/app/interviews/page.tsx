@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Dropdown from "../../components/Dropdown";
+import Dropdown from "../../components/CheckboxDropdown";
 import PaginationSelect from "../../components/PaginationDropdown";
 import InterviewTable from "../../components/InterviewTable";
 import Link from "next/link";

@@ -24,7 +24,10 @@ const InterviewTable: NextPage<Props> = ({ interviews }) => {
           </thead>
           <tbody>
             {interviews.map((item, index) => (
-              <tr key={index} className={index % 2 === 0 ? "bg-green-200" : ""}>
+              <tr
+                key={index}
+                className={index % 2 === 0 ? "bg-green-300" : "bg-green-200"}
+              >
                 <td className="py-2 px-4">{item.dateCreated}</td>
                 <td className="py-2 px-4">{item.id}</td>
                 <td className="py-2 px-4">{item.interviewer}</td>
