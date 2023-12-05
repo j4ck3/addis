@@ -17,11 +17,11 @@ const QuestionInfoHead:React.FC<Props> = ({question}) => {
   return (
     <>
       <a className="btn-theme mt-5" href="/client/22">
-        Tillbaka till klientsida
+      <i className="bi bi-chevron-left me-1"></i>Tillbaka till klientsida
       </a>
       <QuestionsMenu />
         <h1 className="text-base font-bold text-green-600">
-          {question.questionCategory}
+          {question.questionCategoryId}
         </h1>
         <div className="text-2xl flex justify-between">
           <div className="inline-flex text-xl">

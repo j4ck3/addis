@@ -1,10 +1,9 @@
 export interface Question {
-    questionId: string,
+    questionId: number,
     answer: {
-        questionType: string,
         answered: boolean,
     },
     questionType: number,
     questionText: string,
-    questionCategory: string
+    questionCategoryId: number
 }

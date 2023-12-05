@@ -1,7 +1,7 @@
 import React from "react";
 import Radio from "../forms/Radio";
 
-const MaritalStatus = () => {
+const MaritalStatus:React.FC = () => {
   return (
     <>
         <Radio label="Ensamstående"/>

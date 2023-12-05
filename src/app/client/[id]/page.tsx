@@ -23,7 +23,7 @@ const InterviewDetails: NextPage = () => {
             </span>
           </div>
           <div className='space-y-2'>
-            <Link href={'/interview/id/question/id'} className='btn-theme'>Öppna Intervjuv</Link>
+            <Link href={'/interview/id/question/1'} className='btn-theme'>Öppna Intervjuv</Link>
             <Link href={''} className='me-2 btn-theme'>Redigera</Link>
             <Link href={''} className='btn-theme'>Ta Bort</Link>
           </div>
