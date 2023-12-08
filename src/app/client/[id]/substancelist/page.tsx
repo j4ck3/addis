@@ -1,5 +1,4 @@
 import ClientInfoHead from "@/components/ClientInfoHead";
-import Nav from "@/components/Nav";
 import { NextPage } from "next";
 import React from "react";
 

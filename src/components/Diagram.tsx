@@ -9,7 +9,7 @@ export default function Diagram() {
         <div>A = Aktuell, L = Livstid, A1 = En gång under senaste året</div>
         <div className="grid grid-cols-12">
           {Array.from({ length: 12 }, (_, index) => (
-            <div key={index} className="writing-mode-vertical font-bold w-12">
+            <div key={index} className="font-bold w-12">
               Fråga nr.
             </div>
           ))}
@@ -49,7 +49,7 @@ export default function Diagram() {
       <div className="grid grid-cols-2 mt-3">
         <div className="grid grid-cols-12 col-start-2">
           {Array.from({ length: 12 }, (_, index) => (
-            <div key={index} className="writing-mode-vertical font-bold w-12">
+            <div key={index} className="font-bold w-12">
               Fråga nr.
             </div>
           ))}

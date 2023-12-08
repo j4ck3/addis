@@ -1,4 +1,4 @@
-import { Client } from '@/interfaces/Client';
+import { Client } from '@/models/interfaces/Client';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import React from 'react';
@@ -33,7 +33,7 @@ const InterviewDetails: NextPage = () => {
             <div className='flex justify-between'>
               <h3 className='text-lg'>Backgrund</h3>
               <Link href='/client/id/background' className='btn-theme'>
-                Backgrund
+                Bakgrund
               </Link>
             </div>
             <p>Sammanfattning och bakgrundsinformation - Utlåtande.</p>
@@ -62,7 +62,7 @@ const InterviewDetails: NextPage = () => {
           <div className='col bg-slate-200 p-3 rounded'>
             <div className='flex justify-between mb-3'>
               <h3 className='text-lg'>Diagnos Checklista</h3>
-              <div className='space-y-2'>
+                <div className='space-y-2 flex flex-col items-center'>
                 <Link
                   href='/client/id/diagnos/dsm5/checklist'
                   className='btn-theme'

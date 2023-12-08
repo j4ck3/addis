@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logo from "../content/images/static/addis_logo.png";
-import { Client } from "@/interfaces/Client";
+import logo from "../../public/static/addis_logo.png";
+import { Client } from "@/models/interfaces/Client";
 
 var item: Client = {
   id: "ABC123",

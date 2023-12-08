@@ -1,0 +1,16 @@
+import React from "react";
+import Radio from "../inputs/Radio";
+
+const MaritalStatus:React.FC = () => {
+  return (
+    <>
+        <Radio label="Ensamstående"/>
+        <Radio label="Gift/Sambo"/>
+        <Radio label="Särbo"/>
+        <Radio label="Frånskild/Separerad"/>
+        <Radio label="Änka/Änkling"/>
+    </>
+  );
+};
+
+export default MaritalStatus;
