@@ -1,17 +1,16 @@
-import { Client } from "@/interfaces/Client";
+import { interviewSchema } from "@/models/schemas/InterviewSchema";
 import { NextPage } from "next";
 import Link from "next/link";
 import React from "react";
 
 interface Props {
-  interviews: Client[];
+  interviews: interviewSchema[];
 }
-
 const InterviewTable: NextPage<Props> = ({ interviews }) => {
   return (
     <>
-      <div className="">
-        <table className="content-table table-auto table-sortable w-full mt-3 rounded-xl overflow-hidden">
+      <div>
+        <table className="w-full mt-2 rounded-md overflow-hidden">
           <thead>
             <tr className="bg-green-500 text-white">
               <th className="py-2 px-4">Datum</th>
@@ -28,14 +27,14 @@ const InterviewTable: NextPage<Props> = ({ interviews }) => {
                 key={index}
                 className={index % 2 === 0 ? "bg-green-300" : "bg-green-200"}
               >
-                <td className="py-2 px-4">{item.dateCreated}</td>
-                <td className="py-2 px-4">{item.id}</td>
+                <td className="py-2 px-4">{item.created}</td>
+                <td className="py-2 px-4">{item.uno}</td>
                 <td className="py-2 px-4">{item.interviewer}</td>
                 <td className="py-2 px-4">{item.formType}</td>
-                <td className="py-2 px-4">{item.status}</td>
+                <td className="py-2 px-4 capitalize">{item.status}</td>
                 <td className="py-2 px-4">
                   <div className="flex justify-end">
-                    <Link href={"/client/id/"} className="btn-theme">
+                    <Link href={`/client/${item.id}`} className="btn-theme">
                       Öppna klientsida
                     </Link>
                   </div>

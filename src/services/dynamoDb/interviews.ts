@@ -5,7 +5,7 @@ import { interviewSchema } from "@/models/schemas/InterviewSchema";
 const TABLE_NAME = "interviews";
 
 const createOrUpdate = async (interview: interviewSchema) => {
-  const command = new PutCommand({
+ const command = new PutCommand({
     TableName: TABLE_NAME,
     Item: interview,
   });
@@ -13,6 +13,7 @@ const createOrUpdate = async (interview: interviewSchema) => {
     await docClient.send(command);
     return { success: true };
   } catch (error) {
+    console.error('Error creating/updating item:', error);
     return { success: false };
   }
 };
@@ -24,7 +25,7 @@ const readAll = async () => {
   });
   try {
     const res = await docClient.send(command)
-    return { success: true, data: res };
+    return { success: true, interviews: res.Items };
   } catch (error) {
     return { success: false, data: null };
   }

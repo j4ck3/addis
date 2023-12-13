@@ -1,12 +1,11 @@
 import React from "react";
-import Radio from "../inputs/Radio";
 import Text from "../inputs/Text";
+import Yes_No from "./Yes_No";
 
 const AMD_Overdosed: React.FC = () => {
   return (
     <>
-        <Radio label={"Nej"} />
-        <Radio label={"Ja"} />
+        <Yes_No />
         <Text label={"Vilken/Vilka preparat"} />
         <Text label={"Antal ggr"} />
     </>

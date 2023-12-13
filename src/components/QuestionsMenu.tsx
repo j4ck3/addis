@@ -1,27 +1,17 @@
+"use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter, usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 
 const QuestionsMenu: React.FC = () => {
   const params = useParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const isOnEndPage = pathname.endsWith("end");
   const { questionId } = params;
   const numberQuestionId = parseInt(questionId as string);
 
-
-  // const handleMenuScroll = (clickedNext: boolean) => {
-  //   const storedScrollPosition = localStorage.getItem("horizontalScrollPosition");
-  
-  //   if (storedScrollPosition) {
-  //     let newScrollPosition = parseInt(storedScrollPosition, 10);
-  
-  //     newScrollPosition = clickedNext ? newScrollPosition + 70 : newScrollPosition - 70;
-  
-  //     localStorage.setItem("horizontalScrollPosition", String(newScrollPosition));
-  //   }
-  // };
-
-  //remeber scroll position on question menu
   useEffect(() => {
     const container = document.getElementById("QuestionsMenu");
     const handleScroll = () => {
@@ -48,6 +38,14 @@ const QuestionsMenu: React.FC = () => {
       }
     };
   }, []);
+
+  const handleNextButtonClick = () => {
+    if (numberQuestionId === 83 - 1) {
+      router.push("/interview/id/question/end");
+    } else {
+      router.push(`/interview/id/question/${numberQuestionId + 1}`);
+    }
+  };
 
   return (
     <>
@@ -76,13 +74,24 @@ const QuestionsMenu: React.FC = () => {
               {index}
             </Link>
           ))}
+          <Link
+            className={clsx(
+              "border rounded-md text-black h-14 p-4 inline-flex items-center no-underline hover:bg-green-300 mb-3",
+              {
+                "bg-green-400": isOnEndPage,
+              }
+            )}
+            href={`/interview/id/question/end`}
+          >
+            Avsluta
+          </Link>
         </div>
-        <Link
+        <button
+          onClick={handleNextButtonClick}
           className="w-14 h-14 border rounded-md text-black p-4 inline-flex items-center bg-green-300 hover:bg-green-400 mb-3"
-          href={`/interview/id/question/${numberQuestionId + 1}`}
-         >
+        >
           <i className="bi bi-chevron-right"></i>
-        </Link>
+        </button>
       </div>
     </>
   );

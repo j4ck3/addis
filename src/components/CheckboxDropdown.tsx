@@ -1,5 +1,5 @@
-'use client'
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 interface Props {
   options: string[];
@@ -23,31 +23,34 @@ const Dropdown: React.FC<Props> = ({ options, label }) => {
   };
 
   return (
-    <div className='relative'>
-        <button
-            type='button'
-            onClick={handleToggle}
-            className='btn-theme'
-            id='options-menu'
-            aria-haspopup='true'
-            aria-expanded='true'
-        >
-        {label}<i className='bi bi-caret-down-fill ms-1'></i>
-        </button>
+    <div className="relative">
+      <button
+        type="button"
+        onClick={handleToggle}
+        className="bg-green-500 px-4 py-2 rounded-md text-white"
+        id="options-menu"
+        aria-haspopup="true"
+        aria-expanded="true"
+      >
+        {label} <i className="bi bi-chevron-down"></i>
+      </button>
 
       {isOpen && (
-        <div className='origin-top-right absolute right-0 mt-2 rounded-md shadow-lg'>
-          <div className='bg-white rounded-md shadow-xs'>
-            <div className='py-1'>
+        <div className="origin-top-right absolute right-0 mt-2 rounded-md shadow-lg">
+          <div className="bg-white rounded-md shadow-xs">
+            <div className="py-1">
               {options.map((option) => (
-                <label key={option} className='flex items-center px-4 py-2 cursor-pointer'>
+                <label
+                  key={option}
+                  className="flex items-center px-4 py-2 cursor-pointer"
+                >
                   <input
-                    type='checkbox'
+                    type="checkbox"
                     checked={selectedOptions.includes(option)}
                     onChange={() => handleOptionToggle(option)}
-                    className='form-checkbox h-5 w-5 text-gray-600 cursor-pointer'
+                    className="form-checkbox h-5 w-5 text-gray-600 cursor-pointer"
                   />
-                  <span className='ml-2 text-gray-700'>{option}</span>
+                  <span className="ml-2 text-gray-700">{option}</span>
                 </label>
               ))}
             </div>

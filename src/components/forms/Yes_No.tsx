@@ -1,10 +1,6 @@
 import React, { ChangeEvent, useState } from "react";
 
-interface Props {
-  label: string;
-}
-
-const R_R_E_C: React.FC<Props> = ({ label }) => {
+const Yes_No: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -12,27 +8,30 @@ const R_R_E_C: React.FC<Props> = ({ label }) => {
   };
   return (
     <>
-      <div className="grid grid-cols-2 p-3">
-        <div className="normal-case">{label}</div>
-        <div className="grid grid-cols-4">
+      <div className="grid grid-cols-2">
+        <label className="inline-flex items-center cursor-pointer">
           <input
+            className="block cursor-pointer"
             type="radio"
-            value={"no"}
+            value="no"
             checked={selectedOption === "no"}
             onChange={handleOptionChange}
           />
+          <span className="ml-2">Nej</span>
+        </label>
+        <label className="inline-flex items-center cursor-pointer">
           <input
+            className="block cursor-pointer"
             type="radio"
-            value={"yes"}
+            value="yes"
             checked={selectedOption === "yes"}
             onChange={handleOptionChange}
           />
-          <div></div>
-          <input type="checkbox" checked={selectedOption === "yes"} />
-        </div>
+          <span className="ml-2">Ja</span>
+        </label>
       </div>
     </>
   );
 };
 
-export default R_R_E_C;
+export default Yes_No;

@@ -17,7 +17,7 @@ import KNFG_Quantity from "@/components/forms/KNFG_Quantity";
 import KNFG_Smoking from "@/components/forms/KNFG_Smoking";
 import KNFG_Nicotine from "@/components/forms/KNFG_Nicotine_1";
 import KNFG_Food_1 from "@/components/forms/KNFG_Food_1";
-import KNFG_Nicotine_2 from "@/components/forms/KNFG_Nicotine_2";
+import Yes_No from "@/components/forms/Yes_No";
 import KNFG_Games_1 from "@/components/forms/KNFG_Games_1";
 import AMD_Alcohol_1 from "@/components/forms/AMD_Alcohol_1";
 import AMD_Alcohol_3 from "@/components/forms/AMD_Alcohol_3";
@@ -58,9 +58,9 @@ export default function Question() {
     "10": KNFG_Quantity,
     "11": KNFG_Smoking,
     "12": KNFG_Nicotine,
-    "13": KNFG_Nicotine_2,
+    "13": Yes_No,
     "14": KNFG_Food_1,
-    "15": KNFG_Nicotine_2,
+    "15": Yes_No,
     "16": KNFG_Games_1,
     "17": AMD_Alcohol_1,
     "18": AMD_Alcohol_2,
@@ -84,7 +84,7 @@ export default function Question() {
     "36": AMD_Debut,
     "37": AMD_StrongerDoses,
     "38": AMD_Debut,
-    "39": KNFG_Nicotine_2,
+    "39": Yes_No,
     "40": AMD_Debut,
     "41": AMD_Debut,
     "42": AMD_Debut,
@@ -123,15 +123,14 @@ export default function Question() {
     "75": AMD_Debut,
     "76": AMD_Debut,
     "77": AMD_Debut,
-    "78": KNFG_Nicotine_2,
+    "78": Yes_No,
     "79": AMD_Treatment,
     "80": AMD_CurrentStay,
     "81": AMD_Relatives,
-    "82": KNFG_Nicotine_2,
+    "82": Yes_No,
   };
 
-  const SelectedFormComponent =
-    formComponents[questionId as keyof typeof formComponents];
+  const SelectedFormComponent = formComponents[questionId as keyof typeof formComponents];
   return (
     <>
       <div className="container">

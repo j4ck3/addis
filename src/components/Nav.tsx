@@ -4,7 +4,7 @@ import Image from "next/image";
 import logo from "../../public/static/addis_logo.png";
 import Link from "next/link";
 
-import { auth } from "@/auth";
+import { auth } from "@/auth.config";
 
 export default async function Nav() {
   const session = await auth();
@@ -45,12 +45,12 @@ export default async function Nav() {
               </div>
               <div className="group inline-block relative">
                 <Link
-                  className="group text-white no-underline hover:text-gray-300 py-4"
+                  className="text-white no-underline hover:text-gray-300 py-4"
                   href="/interviews"
                 >
                   Administrera
                 </Link>
-                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md ">
+                <div className="hidden group-hover:block absolute bg-white mt-2 py-2 space-y-2 shadow-md rounded-md">
                   <Link
                     href="#"
                     className="block px-4 py-2 text-gray-800 no-underline"

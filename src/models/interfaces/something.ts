@@ -379,7 +379,7 @@ const interview: Interview = {
         answered: true,
       },
       type: "",
-      text: "* HHar du någonsin sett till att ____ alltid finns tillgängligt för eget bruk?",
+      text: "* Har du någonsin sett till att ____ alltid finns tillgängligt för eget bruk?",
       category: "Alkohol / Läkemedel / Droger",
     },
     {

@@ -1,8 +1,8 @@
 import React from "react";
-import D_D_T from "../inputs/S_T_T";
+import S_T_T from "../inputs/S_T_T";
 
 const AMD_HowOften: React.FC = () => {
-  const opstions: string[] = [
+  const options: string[] = [
     "*5-7 dagar/vecka",
     "3-4 dagar/vecka",
     "1-2 dagar/vecka",
@@ -20,9 +20,9 @@ const AMD_HowOften: React.FC = () => {
           <div className="text-sm">Ålder reg.bruk</div>
         </div>
       </div>
-      <D_D_T options={opstions} label={"Alkohol"} />
-      <D_D_T options={opstions} label={"Opioider"} />
-      <D_D_T options={opstions} label={"kokain"} />
+      <S_T_T options={options} label={"Alkohol"} />
+      <S_T_T options={options} label={"Opioider"} />
+      <S_T_T options={options} label={"kokain"} />
     </>
   );
 };

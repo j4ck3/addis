@@ -16,8 +16,8 @@ const S_T_T: React.FC<Props> = ({ label, options }) => {
                 <option key={index} value={option}>{option}</option>
             ))}
           </select>
-          <input className="p-2 h-6 border rounded" type="text" name="1" />
-          <input className="p-2 h-6 border rounded" type="text" name="1" />
+          <input className="p-2 h-6 border rounded" type="text" />
+          <input className="p-2 h-6 border rounded" type="text" />
         </div>
       </div>
     </>

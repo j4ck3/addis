@@ -1,10 +1,10 @@
 "use client";
-import React, { useState, ChangeEvent, FormEvent } from "react";
+import React, { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import { interviewSchema } from "@/models/schemas/InterviewSchema";
-import { createOrUpdate } from "@/services/dynamoDb/interviews";
-const { v4: uuidv4 } = require("uuid");
+import { createOrUpdate, readOne } from "@/services/dynamoDb/interviews";
+import { useParams, useRouter } from "next/navigation";
 
-export default function Create() {
+export default function Edit() {
   const defualtValues: interviewSchema = {
     id: "",
     uno: "",
@@ -16,16 +16,23 @@ export default function Create() {
     created: "",
     questions: [],
   };
-  
-
   const [formData, setFormData] = useState<interviewSchema>(defualtValues);
-  const id = uuidv4();
-  const currentDate = new Date();
-  const formattedDate = currentDate.toLocaleDateString("sv-SE", {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-  });
+  const router = useRouter()
+  const params = useParams()
+  const { id } = params;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await readOne(id as string);
+      if (res.data?.id != null && res.data?.id !== "") {
+        setFormData(res.data as interviewSchema);
+      }
+    };
+
+    fetchData();
+  }, [id]);
+
+
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -38,17 +45,10 @@ export default function Create() {
 
   const handleFormSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    formData.id = id;
-    formData.created = formattedDate;
-    formData.status = "started";
-
     if (formData != null) {
       const res = await createOrUpdate(formData);
-
       if (res.success) {
-        setFormData(defualtValues);
-        //router.push(client/id)
+        router.push(`/client/${id}`)
       }
     }
   };
@@ -67,9 +67,10 @@ export default function Create() {
             <select
               name="formType"
               required
+              disabled
               value={formData.formType}
               onChange={handleInputChange}
-              className="shadow border rounded w-full py-2 px-3 text-gray-700"
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 cursor-not-allowed"
             >
               <option value="ADDIS">ADDIS</option>
               <option value="ADDIS Ung">ADDIS Ung</option>
