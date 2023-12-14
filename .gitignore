@@ -2,7 +2,7 @@
 
 aws-exports.js
 .env
-
+creds.ts
 
 # dependencies
 /node_modules

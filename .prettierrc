@@ -1,0 +1,9 @@
+{
+   "singleQuote": true,
+   "tabWidth": 3,
+   "semi": false,
+   "useTabs": false,
+   "tsxSingleQuote": true,
+   "jsxSingleQuote": true,
+   "tsxBracketSameLine": false
+}
