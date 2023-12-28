@@ -1,4 +1,4 @@
-export interface interviewSchema {
+export interface InterviewSchema {
   id: string, 
   uno: string,
   age: string,
@@ -7,5 +7,5 @@ export interface interviewSchema {
   formType: string,
   status: string,
   created: string,
-  questions: []
+  answers: unknown[]
 }

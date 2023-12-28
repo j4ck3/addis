@@ -5,7 +5,7 @@ import creds from './creds'
 
 const dbClient = new DynamoDBClient({
    region: 'eu-north-1',
-   credentials: creds,
+   credentials: creds
 })
 
 export const docClient = DynamoDBDocumentClient.from(dbClient)

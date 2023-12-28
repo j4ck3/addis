@@ -1,17 +1,16 @@
-import React from "react";
-import Radio from "../inputs/Radio";
-import Text from "../inputs/Text";
+import React from 'react'
+import Text from '../inputs/Text'
+import Yes_No from './Yes_No'
 
-const G_Kids:React.FC = () => {
-  return (
-    <>
-    <Radio label={"Ja"} />
-    <Radio label={"Nej"} />
+const G_Kids: React.FC = () => {
+	return (
+		<>
+			<Yes_No />
+			<Text label={'Hur Många?'} />
+			<Text label={'Ålder'} />
+		</>
+	
+	)
+}
 
-    <Text label={"Hur Många?"} />
-    <Text label={"Ålder"} />
-    </>
-  );
-};
-
-export default G_Kids;
+export default G_Kids

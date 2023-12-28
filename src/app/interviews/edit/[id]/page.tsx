@@ -1,11 +1,11 @@
-'use client'
+   'use client'
 import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react'
-import { interviewSchema } from '@/models/schemas/InterviewSchema'
+import { InterviewSchema } from '@/models/schemas/InterviewSchema'
 import { createOrUpdate, readOne } from '@/services/dynamoDb/interviews'
 import { useParams, useRouter } from 'next/navigation'
 
 export default function Edit() {
-   const defualtValues: interviewSchema = {
+   const defualtValues: InterviewSchema = {
       id: '',
       uno: '',
       age: '',
@@ -16,16 +16,16 @@ export default function Edit() {
       created: '',
       questions: [],
    }
-   const [formData, setFormData] = useState<interviewSchema>(defualtValues)
+   const [formData, setFormData] = useState<InterviewSchema>(defualtValues)
    const router = useRouter()
    const params = useParams()
    const { id } = params
-
+   
    useEffect(() => {
       const fetchData = async () => {
          const res = await readOne(id as string)
          if (res.data?.id != null && res.data?.id !== '') {
-            setFormData(res.data as interviewSchema)
+            setFormData(res.data as InterviewSchema)
          }
       }
 
@@ -59,11 +59,12 @@ export default function Edit() {
                onSubmit={handleFormSubmit}
             >
                <div className='mb-4 relative'>
-                  <label className='block text-gray-700 text-sm font-bold mb-2'>
+                  <label htmlFor='formType' className='block text-gray-700 text-sm font-bold mb-2'>
                      Formulärtyp
                   </label>
                   <select
                      name='formType'
+                     id='formType'
                      required
                      disabled
                      value={formData.formType}
@@ -78,11 +79,12 @@ export default function Edit() {
                   </select>
                </div>
                <div className='mb-6'>
-                  <label className='block text-gray-700 text-sm font-bold mb-2'>
+                  <label htmlFor='age' className='block text-gray-700 text-sm font-bold mb-2'>
                      Ålder
                   </label>
                   <input
                      name='age'
+                     id='age'
                      required
                      autoComplete='off'
                      value={formData.age}
@@ -92,11 +94,12 @@ export default function Edit() {
                   />
                </div>
                <div className='mb-6'>
-                  <label className='block text-gray-700 text-sm font-bold mb-2'>
+                  <label  htmlFor='uno' className='block text-gray-700 text-sm font-bold mb-2'>
                      UNO-kod
                   </label>
                   <input
                      name='uno'
+                     id='uno'
                      required
                      autoComplete='off'
                      value={formData.uno}
@@ -106,11 +109,12 @@ export default function Edit() {
                   />
                </div>
                <div className='mb-6 relative'>
-                  <label className='block text-gray-700 text-sm font-bold mb-2'>
+                  <label htmlFor='gender' className='block text-gray-700 text-sm font-bold mb-2'>
                      Kön
                   </label>
                   <select
                      name='gender'
+                     id='gender'
                      required
                      value={formData.gender}
                      onChange={handleInputChange}

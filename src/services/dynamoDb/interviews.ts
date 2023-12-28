@@ -6,16 +6,11 @@ import {
    ScanCommand,
    QueryCommand,
 } from '@aws-sdk/lib-dynamodb'
-import { interviewSchema } from '@/models/schemas/InterviewSchema'
+import { InterviewSchema } from '@/models/schemas/InterviewSchema'
 
-const TABLE_NAME = 'interviews'
+const TABLE_NAME = 'addis_interviews'
 
-const createOrUpdate = async (interview: interviewSchema) => {
-   const isUnoUnique = await isUniqueUno(interview.uno)
-
-   if (!isUnoUnique) {
-      return { success: false, message: 'UNO-code is not unique.' }
-   }
+const createOrUpdate = async (interview: InterviewSchema) => {
    const command = new PutCommand({
       TableName: TABLE_NAME,
       Item: interview,

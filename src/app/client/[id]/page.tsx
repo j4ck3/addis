@@ -3,11 +3,11 @@ import { useParams, useRouter } from 'next/navigation'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { interviewSchema } from '@/models/schemas/InterviewSchema'
+import { InterviewSchema } from '@/models/schemas/InterviewSchema'
 import { deleteOne, readOne } from '@/services/dynamoDb/interviews'
 
 const InterviewDetails: NextPage = () => {
-   const [interview, setInterview] = useState<interviewSchema | null>(null)
+   const [interview, setInterview] = useState<InterviewSchema | null>(null)
    const params = useParams()
    const router = useRouter()
    const { id } = params
@@ -16,7 +16,7 @@ const InterviewDetails: NextPage = () => {
       const fetchData = async () => {
          const res = await readOne(id as string)
          if (res.data?.id != null && res.data?.id !== '') {
-            setInterview(res.data as interviewSchema)
+            setInterview(res.data as InterviewSchema)
          }
       }
       fetchData()
@@ -47,9 +47,7 @@ const InterviewDetails: NextPage = () => {
                         <div className='text-2xl font-bold'>
                            UNO-kod: {interview.uno}
                         </div>
-                        <div>
-                           {interview.interviewer}, {interview.created}
-                        </div>
+                        <div>{interview.created}</div>
                      </div>
                      <div className='flex items-center'>
                         <Link
@@ -69,7 +67,9 @@ const InterviewDetails: NextPage = () => {
                </div>
                <div></div>
                <div className='space-y-2'>
-                  <Link href={'/interview/id/question/1'}>Öppna Intervjuv</Link>
+                  <Link href={`/interview/${id}/question/1`}>
+                     Öppna Intervjuv
+                  </Link>
                </div>
             </div>
             <div className='grid grid-cols-2 gap-7 w-full mt-5'>

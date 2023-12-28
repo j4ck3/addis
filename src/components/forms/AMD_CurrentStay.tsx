@@ -1,16 +1,19 @@
-import React from "react";
-import Radio from "../inputs/Radio";
-import R_T from "../inputs/R_T";
+import React from 'react'
+import R_T from '../inputs/R_T'
+import RadioGroup from '../inputs/Radio'
 
-const AMD_CurrentStay:React.FC = () => {
-  return (
-    <>
-      <Radio label={"Hemmet"} />
-      <Radio label={"Behandlingshem/Institution"} />
-      <Radio label={"Fängelse"} />
-      <R_T label={"Annat"} />
-    </>
-  );
-};
+const AMD_CurrentStay: React.FC = () => {
+   const options = [
+      { label: 'Hemmet', value: '1' },
+      { label: 'Behandlingshem/Institution', value: '2' },
+      { label: 'Fängelse', value: '3' },
+   ]
+   return (
+      <>
+         <RadioGroup options={options} />
+         <R_T label={'Annat'} />
+      </>
+   )
+}
 
-export default AMD_CurrentStay;
+export default AMD_CurrentStay

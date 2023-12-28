@@ -1,25 +1,19 @@
-import React from "react";
-import Radio from "../inputs/Radio";
-import Text from "../inputs/Text";
+import React from 'react'
+import Text from '../inputs/Text'
+import RadioGroup from '../inputs/Radio'
+import { QuestionSchema } from '@/models/schemas/QuestionSchema'
 
-const G_WorkSituation:React.FC = () => {
-  return (
-    <>
-    <Radio label={"Hemarbetande"} />
-    <Radio label={"Studerande"} />
-    <Radio label={"Arbetslös"} />
-    <Radio label={"Arbetsmarknadsåtgärder"} />
-    <Radio label={"Sjukskriven"} />
-    <Radio label={"Sjukersättning/Förtidspension"} />
-    <Radio label={"Ålderspension"} />
-    <Radio label={"Timanställd"} />
-    <Radio label={"Deltidsanställd"} />
-    <Radio label={"Heltidsanställd"} />
-    <Radio label={"Projektanställd"} />
-    <Radio label={"Egenföretagare"} />
-    <Text label={"Yrke/Sysselsättning?"} />
-    </>
-  );
-};
+interface Props {
+	question: QuestionSchema
+}
 
-export default G_WorkSituation;
+const G_WorkSituation: React.FC<Props> = ({ question }) => {
+	return (
+		<>
+			<RadioGroup options={question.options} />
+			<Text label={'Yrke/Sysselsättning?'} />
+		</> //in med label och fixa radiogroup
+	)
+}
+
+export default G_WorkSituation
